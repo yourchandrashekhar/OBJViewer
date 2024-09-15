@@ -35,13 +35,13 @@ jobs:
         cd build-${{ matrix.build-type }}
         qmake CONFIG+=${{ matrix.build-type }} ../ObjViewer.pro
 
-    #- name: Build project
-    #  run: |
-    #    cd ObjViewer/build-${{ matrix.build-type }}
-    #    mingw32-make
+    - name: Build project
+      run: |
+        cd ObjViewer/build-${{ matrix.build-type }}
+        mingw32-make
 
-    #- name: Archive build artifacts
-    #  uses: actions/upload-artifact@v4
-    #  with:
-    #    name: build-${{ matrix.build-type }}
-    #    path: ObjViewer/build-${{ matrix.build-type }}/
+    - name: Archive build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-${{ matrix.build-type }}
+        path: ObjViewer/build-${{ matrix.build-type }}/
