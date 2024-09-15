@@ -19,10 +19,15 @@ jobs:
     - name: Install Qt
       uses: jurplel/install-qt-action@v4
       with:
-        version: '5.11.3'
+        version: '6.7.2'
         host: 'windows'
         target: 'desktop'
-        arch: 'win32_mingw53'
+        arch: 'win64_mingw'
+
+    - name: Set up MinGW
+      run: |
+        choco install mingw
+        setx PATH "%PATH%;C:\tools\mingw64\bin"
 
     - name: Configure project with qmake
       run: |
