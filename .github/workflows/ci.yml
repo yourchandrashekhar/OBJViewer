@@ -20,6 +20,7 @@ jobs:
       uses: jurplel/install-qt-action@v4
       with:
         version: '6.7.2'
+        modules: 'core gui 3dcore 3drender 3dinput 3dextras'
         host: 'windows'
         target: 'desktop'
         arch: 'win64_mingw'
