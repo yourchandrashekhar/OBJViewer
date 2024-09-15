@@ -14,11 +14,11 @@ jobs:
 
     strategy:
       matrix:
-        build-type: [debug, release]
+        build-type: [debug]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    #- name: Checkout repository
+    #  uses: actions/checkout@v2
 
     - name: Set up Qt
       uses: jurplel/install-qt-action@v2
@@ -28,20 +28,20 @@ jobs:
         target: 'desktop'
         arch: 'win32_mingw53'
 
-    - name: Configure project with qmake
-      run: |
-        cd ObjViewer
-        mkdir build-${{ matrix.build-type }}
-        cd build-${{ matrix.build-type }}
-        qmake CONFIG+=${{ matrix.build-type }} ../ObjViewer.pro
+   # - name: Configure project with qmake
+   #   run: |
+   #     cd ObjViewer
+   #     mkdir build-${{ matrix.build-type }}
+   #     cd build-${{ matrix.build-type }}
+   #     qmake CONFIG+=${{ matrix.build-type }} ../ObjViewer.pro
 
-    - name: Build project
-      run: |
-        cd ObjViewer/build-${{ matrix.build-type }}
-        mingw32-make
+    #- name: Build project
+    #  run: |
+    #    cd ObjViewer/build-${{ matrix.build-type }}
+    #    mingw32-make
 
-    - name: Archive build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-${{ matrix.build-type }}
-        path: ObjViewer/build-${{ matrix.build-type }}/
+    #- name: Archive build artifacts
+    #  uses: actions/upload-artifact@v4
+    #  with:
+    #    name: build-${{ matrix.build-type }}
+    #    path: ObjViewer/build-${{ matrix.build-type }}/
