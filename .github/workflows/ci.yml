@@ -17,11 +17,11 @@ jobs:
         build-type: [debug]
 
     steps:
-    #- name: Checkout repository
-    #  uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-    - name: Set up Qt
-      uses: jurplel/install-qt-action@v2
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v4
       with:
         version: '5.11.3'
         host: 'windows'
