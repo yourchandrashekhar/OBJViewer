@@ -28,12 +28,12 @@ jobs:
         target: 'desktop'
         arch: 'win32_mingw53'
 
-   # - name: Configure project with qmake
-   #   run: |
-   #     cd ObjViewer
-   #     mkdir build-${{ matrix.build-type }}
-   #     cd build-${{ matrix.build-type }}
-   #     qmake CONFIG+=${{ matrix.build-type }} ../ObjViewer.pro
+    - name: Configure project with qmake
+      run: |
+        cd ObjViewer
+        mkdir build-${{ matrix.build-type }}
+        cd build-${{ matrix.build-type }}
+        qmake CONFIG+=${{ matrix.build-type }} ../ObjViewer.pro
 
     #- name: Build project
     #  run: |
