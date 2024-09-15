@@ -35,7 +35,6 @@ jobs:
       run: |
         echo "${{ env.QT_ROOT_DIR }}\\bin" >> $GITHUB_PATH
         type $GITHUB_PATH
-        type ${{ GITHUB_PATH }}
         cd ObjViewer/build
         mingw32-make debug
 
