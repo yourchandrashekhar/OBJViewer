@@ -22,12 +22,7 @@ jobs:
         version: '5.11.3'
         host: 'windows'
         target: 'desktop'
-        arch: 'win64_mingw'
-
-    - name: Set up MinGW
-      run: |
-        choco install mingw
-        setx PATH "%PATH%;C:\tools\mingw64\bin"
+        arch: 'win32_mingw53'
 
     - name: Configure project with qmake
       run: |
@@ -43,8 +38,8 @@ jobs:
         cd ObjViewer/build
         mingw32-make debug
 
-    - name: Archive build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-debug
-        path: ObjViewer/build-debug/
+    #- name: Archive build artifacts
+    #  uses: actions/upload-artifact@v4
+    #  with:
+    #    name: build-debug
+    #    path: ObjViewer/build-debug/
