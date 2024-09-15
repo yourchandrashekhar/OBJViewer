@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT       += 3dcore 3drender 3dinput 3dextras
+LIBS     += -LD:/a/OBJViewer/Qt/5.11.3/mingw53_32/lib -lQt5Core -lQt5Gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
