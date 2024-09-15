@@ -26,7 +26,7 @@ jobs:
         version: '5.11.3'
         host: 'windows'
         target: 'desktop'
-        arch: 'win32_mingw73'
+        arch: 'win32_mingw53'
 
     - name: Configure project with qmake
       run: |
