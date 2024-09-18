@@ -28,10 +28,10 @@ jobs:
     - name: Install Qt and MinGW
       run: |
         curl -L -o qt-installer.exe https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe
-        start /wait "qt-installer.exe --silent --no-qt-plugins --platform minimal"
+        start "qt-installer.exe --silent --no-qt-plugins --platform minimal" /wait 
 
         curl -L -o mingw-installer.exe https://sourceforge.net/projects/mingw-w64/files/latest/download
-        start /wait "mingw-installer.exe /S"
+        start "mingw-installer.exe /S" /wait
 
     - name: Configure project with qmake
       run: |
