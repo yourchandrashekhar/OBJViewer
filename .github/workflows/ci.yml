@@ -27,11 +27,11 @@ jobs:
 
     - name: Install Qt and MinGW
       run: |
-        curl -L -o D:\a\OBJViewer\OBJViewer\qt-installer.exe https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe
-        start "D:\a\OBJViewer\OBJViewer\qt-installer.exe --silent --no-qt-plugins --platform minimal" /wait 
+        curl -L -o .\qt-installer.exe https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe
+        start ".\qt-installer.exe --silent --no-qt-plugins --platform minimal" /wait 
 
-        curl -L -o D:\a\OBJViewer\OBJViewer\mingw-installer.exe https://sourceforge.net/projects/mingw-w64/files/latest/download
-        start "D:\a\OBJViewer\OBJViewer\mingw-installer.exe /S" /wait
+        curl -L -o .\mingw-installer.exe https://sourceforge.net/projects/mingw-w64/files/latest/download
+        start ".\mingw-installer.exe /S" /wait
 
     - name: Configure project with qmake
       run: |
